@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 01:17:31 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/03/14 14:43:46 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/03/14 14:45:56 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s && s[i] != c && s[i])
@@ -50,9 +50,9 @@ int		ft_line(int fd, char **stock)
 
 int		get_next_line(int fd, char **line)
 {
-	static char *stock[150];
-	int ret;
-	char *temp;
+	static char	*stock[150];
+	int			ret;
+	char		*temp;
 
 	if (fd < 0 || line == NULL || BUFFER_SIZE <= 0)
 		return (-1);
@@ -62,7 +62,7 @@ int		get_next_line(int fd, char **line)
 		ret = ft_line(fd, &stock[fd]);
 	if (ret == 1)
 	{
-		*line = ft_substr(stock[fd], 0, 
+		*line = ft_substr(stock[fd], 0,
 		(ft_strchr(stock[fd], '\n') - stock[fd]));
 		temp = ft_strdup(ft_strchr(stock[fd], '\n') + 1);
 	}
