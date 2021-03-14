@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 01:17:31 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/03/14 14:22:40 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/03/14 14:30:03 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ int		get_next_line(int fd, char **line)
 
 	if (fd < 0 || line == NULL)
 		return (-1);
+	temp = NULL;
 	ret = 1;
 	if (!ft_strchr(stock[fd], '\n'))
 		ret = ft_line(fd, &stock[fd]);
