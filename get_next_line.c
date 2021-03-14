@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 01:17:31 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/03/14 14:35:13 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/03/14 14:43:46 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ char	*ft_strchr(const char *s, int c)
 
 int		ft_line(int fd, char **stock)
 {
-	char buffer[BUFFER_SIZE + 1];
-	char *temp;
-	int i;
+	char	buffer[BUFFER_SIZE + 1];
+	char	*temp;
+	int		i;
 
 	i = 0;
 	buffer[0] = 0;
@@ -62,7 +62,8 @@ int		get_next_line(int fd, char **line)
 		ret = ft_line(fd, &stock[fd]);
 	if (ret == 1)
 	{
-		*line = ft_substr(stock[fd], 0, (ft_strchr(stock[fd], '\n') - stock[fd]));
+		*line = ft_substr(stock[fd], 0, 
+		(ft_strchr(stock[fd], '\n') - stock[fd]));
 		temp = ft_strdup(ft_strchr(stock[fd], '\n') + 1);
 	}
 	if (ret == 0)
@@ -71,33 +72,3 @@ int		get_next_line(int fd, char **line)
 	stock[fd] = temp;
 	return (ret);
 }
-
-/*int    main(void)
-{
-    int      ret;
-    int      ret2;
-    char      *line;
-    char      *line2;
-    int      fd;
-    int      fd2;
-
-    fd = open("get_next_line.c", O_RDONLY);
-    fd2 = open("oui.txt", O_RDONLY);
-    ret = 1;
-	while (ret > 0 || ret2 > 0)
-	{
-    	ret = get_next_line(fd, &line);
-    	ret2 = get_next_line(fd2, &line2);
-		if (ret > 0)
-		{
-			printf("%d |%s|\n", ret, line);
-			free(line);
-		}
-		if (ret2 > 0)
-		{
-			printf("%d |%s|\n", ret2, line2);
-			free(line2);
-		}
-	}
-	close(fd);
-}*/
