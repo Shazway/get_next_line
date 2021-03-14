@@ -6,12 +6,13 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 01:17:31 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/03/14 13:56:51 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/03/14 14:22:40 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 #include <stdio.h>
+
 char	*ft_strchr(const char *s, int c)
 {
 	int i;
@@ -24,15 +25,13 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-int			ft_line(int fd, char **stock)
+int		ft_line(int fd, char **stock)
 {
 	char buffer[BUFFER_SIZE + 1];
 	char *temp;
 	int i;
-	int j;
 
 	i = 0;
-	j = 0;
 	buffer[0] = 0;
 	while (!(ft_strchr(buffer, '\n')))
 	{
@@ -52,7 +51,6 @@ int			ft_line(int fd, char **stock)
 int		get_next_line(int fd, char **line)
 {
 	static char *stock[150];
-	int i;
 	int ret;
 	char *temp;
 
@@ -73,7 +71,7 @@ int		get_next_line(int fd, char **line)
 	return (ret);
 }
 
-int    main(void)
+/*int    main(void)
 {
     int      ret;
     int      ret2;
@@ -101,4 +99,4 @@ int    main(void)
 		}
 	}
 	close(fd);
-}
+}*/
