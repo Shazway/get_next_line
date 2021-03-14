@@ -6,13 +6,12 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 01:18:12 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/03/14 13:56:56 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/03/14 14:35:23 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-# define BUFFER_SIZE 2
 # include <unistd.h>
 # include <stdlib.h>
 # include <sys/types.h>
