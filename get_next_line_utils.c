@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 01:16:52 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/03/14 14:24:38 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/03/16 13:24:28 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strdup(const char *s)
 	if (!(dest = malloc(sizeof(char) * (ft_strlen(s) + 1))))
 		return (NULL);
 	i = 0;
-	while (s[i])
+	while (s && s[i])
 	{
 		dest[i] = s[i];
 		i++;
